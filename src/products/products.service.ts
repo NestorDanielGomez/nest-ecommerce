@@ -45,24 +45,41 @@ export class ProductsService {
     async findOne(term: string) {
 
         let product: Product
+
         if (isUUID(term)) {
 
             product = await this.productRepository.findOneBy({ id: term })
         } else {
-            product = await this.productRepository.findOneBy({ slug: term })
+            const queryBuilder = this.productRepository.createQueryBuilder()
+
+            product = await queryBuilder
+                .where(`UPPER(title) =:title or slug =:slug`, {
+                    title: term.toUpperCase(),
+                    slug: term.toLowerCase()
+                }).getOne()
         }
 
 
-
-
-        //const product = await this.productRepository.findOneBy({ id })
         if (!product)
             throw new NotFoundException(`Producto con el id:${term} no existe`)
         return product
     }
 
-    update(id: number, updateProductDto: UpdateProductDto) {
-        return `This action updates a #${id} product`;
+    async update(id: string, updateProductDto: UpdateProductDto) {
+        const product = await this.productRepository.preload({
+            id: id,
+            ...UpdateProductDto
+        })
+
+        if (!product) throw new NotFoundException(`Producto con el id:${id} no existe`)
+        try {
+            await this.productRepository.save(product)
+            return product
+        } catch (error) {
+            this.handleDbExceptions(error)
+        }
+
+
     }
 
     async remove(id: string) {
