@@ -68,10 +68,11 @@ export class ProductsService {
     async update(id: string, updateProductDto: UpdateProductDto) {
         const product = await this.productRepository.preload({
             id: id,
-            ...UpdateProductDto
+            ...updateProductDto
         })
 
         if (!product) throw new NotFoundException(`Producto con el id:${id} no existe`)
+
         try {
             await this.productRepository.save(product)
             return product

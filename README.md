@@ -95,3 +95,23 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+Relaciones
+
+De uno a muchos
+
+Muchos a uno
+
+Query Runner
+
+Query Builder
+
+Transacciones
+
+Commits y Rollbacks
+
+Renombrar tablas
+
+Creación de un SEED
+
+Aplanar resultados
