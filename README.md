@@ -44,6 +44,12 @@ $ docker-compose up -d
   $ npm run start:dev
 ```
 
+-Ejecutar Seed para llenado de la BD
+
+```bash
+  $ localhost:3000/api/seed
+```
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
