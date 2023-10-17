@@ -124,4 +124,30 @@ Aplanar resultados
 
 carga de archivos al backend. colocar archivos físicamente en el file system
 
-Validaciones y control de carga de cualquier archivo hacia el backend.
+## Validaciones y control de carga de cualquier archivo hacia el backend.
+
+---
+
+Autenticación
+
+Autorización
+
+Json Web Tokens
+
+Hash de contraseñas
+
+Nest Passport
+
+Módulos asíncronos
+
+Protección de rutas
+
+Custom Method Decorators
+
+Custom Class Decorators
+
+Custom Property Decorators
+
+Enlazar usuarios con productos
+
+Bearer Tokens
