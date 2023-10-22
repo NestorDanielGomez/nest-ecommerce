@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "362731ac-9052-4bf0-8dca-106a77fe6e32",
+		"name": "Ecommerce-Nest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20246688"
+	},
+	"item": [
+		{
+			"name": "Agregar Producto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"Remera Nestor1234\",\r\n\"sizes\": [\"S\", \"M\", \"L\", \"XL\"],\r\n\"gender\": \"men\",\r\n\"slug\":\"nestor remera slug\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/products/e6d7a3d1-0a95-49a6-9b1d-08f05392f2c3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"e6d7a3d1-0a95-49a6-9b1d-08f05392f2c3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subir una imagen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Usuario/Desktop/WhatsApp Image 2020-09-15 at 16.00.04 (1).jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/files/product",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"files",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ejecutar Seed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/seed",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Image de producto por nombre",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"nestor@correo.com\",\r\n\"password\": \"Nestor123\",\r\n\"fullName\": \"nestor Gomez\",\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"email\":\"nestor@correo.com\",\r\n\"password\": \"Nestor123\",\r\n\"fullName\": \"nestor Gomez\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ruta privada",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjOGU1NTk4LTM2NzYtNDc3My1hOTM5LTY0MWQzNThiOTAzMCIsImlhdCI6MTY5NzkwODczOCwiZXhwIjoxNjk3OTEyMzM4fQ.GonCYw20EnBmV1U4lMjzUcOGyrE8wohBweXXK1rijX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/auth/private",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"private"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
