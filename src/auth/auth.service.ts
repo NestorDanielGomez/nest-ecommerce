@@ -53,6 +53,13 @@ export class AuthService {
     }
   }
 
+  async checkAuthStatus(user: User) {
+    return {
+      ...user,
+      token: this.getJwtToken({ id: user.id })
+    }
+  }
+
   private getJwtToken(payload: JwtPayload) {
     const token = this.jwtService.sign(payload)
     return token
@@ -65,5 +72,7 @@ export class AuthService {
 
     throw new InternalServerErrorException(`chequear log servers`)
   }
+
+
 
 }

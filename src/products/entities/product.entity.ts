@@ -1,5 +1,6 @@
-import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { ProductImage } from "./";
+import { User } from "../../auth/entities/user.entity";
 
 @Entity({ name: "products" })
 export class Product {
@@ -44,12 +45,20 @@ export class Product {
     @Column('text', { array: true, default: [] })
     tags: string[];
 
+    //cascade borra directamente las imagenes asociadas cuando se borra su producto.
     @OneToMany(
         () => ProductImage,
         productImage => productImage.product,
         { cascade: true, eager: true }
     )
     images?: ProductImage[]
+
+    @ManyToOne(
+        () => User,
+        (user) => user.product,
+        { eager: true })
+    user: User
+
 
 
     @BeforeInsert()
