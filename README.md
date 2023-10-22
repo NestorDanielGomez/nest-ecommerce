@@ -151,3 +151,20 @@ Custom Property Decorators
 Enlazar usuarios con productos
 
 Bearer Tokens
+------------Nest Gateways
+
+Conecciones
+
+Desconecciones
+
+Emitir y escuchar mensajes desde el servidor y cliente
+
+Cliente con Vite y TS
+
+Autenticar conección mediante JWTs
+
+Usar mismo mecanismos de autenticación previamente creado
+
+Desconectar sockets manualmente
+
+Prevenir doble conexión de usuarios autenticados.
