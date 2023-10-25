@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import * as bcrypt from "bcrypt"
 import { CreateUserDto, LoginUserDto } from './dto';
 import { User } from './entities/user.entity';
-import { JwtPayload } from './interfaces/jwt-payload-interface';
+import { JwtPayload } from './interfaces/jwt-payload.interface';
 import { JwtService } from '@nestjs/jwt';
 ;
 
