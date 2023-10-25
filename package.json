@@ -5,8 +5,8 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
-  "engine": {
-    "node": "16.x"
+  "engines": {
+    "node": ">=16.0.0"
   },
   "scripts": {
     "build": "nest build",
